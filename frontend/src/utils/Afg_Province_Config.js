@@ -75,7 +75,7 @@ export const homePrices = [
   },
     {
     id:"PriceModelRentalHome_3",
-    label: 'زیر 50 هزار',
+    label: 'بالایی 50 هزار',
     value:'rent_200'
   },
 ]

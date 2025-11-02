@@ -1,5 +1,5 @@
-import { homePrices, homeSituation, numberOfRooms } from "../../utils/Afg_Province_Config";
-import SelectBox from "../selectBoxProvinceNames/SelectBox";
+import { homePrices, homeSituation, numberOfRooms } from "../../../utils/Afg_Province_Config";
+import SelectBox from "../../ui/selectbox/SelectBox";
 
 const RentPricesHomeSituationNumberOfRoomsSelectBox = () => {
   return (
