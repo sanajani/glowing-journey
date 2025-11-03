@@ -1,10 +1,9 @@
 
-const Button = ({containerStyle='', text, onClick='', ...props}) => {
+const Button = ({containerStyle='', text, ...props}) => {
   return (
     <button
     {...props}
     className={containerStyle}
-    onClick={onClick}
     >
       {text}
     </button>

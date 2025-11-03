@@ -5,6 +5,7 @@ import RootLayout from '../layouts/RootLayout';
 
 // pages
 import Home from '../pages/Home';
+import About from '../pages/About';
 
 export const router = createBrowserRouter([
     {
@@ -17,7 +18,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/about',
-                element: <h1>About</h1>
+                element: <About />
             },
             {
                 path: '/contact',
