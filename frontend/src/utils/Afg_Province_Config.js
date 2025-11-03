@@ -73,7 +73,7 @@ export const homePrices = [
     value:'rent_50'
   },
     {
-    id:"PriceModelRentalHome_3",
+    id:"PriceModelRentalHome_4",
     label: 'بالایی 50 هزار',
     value:'rent_200'
   },
