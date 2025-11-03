@@ -3,12 +3,11 @@ import SelectBox from "../../ui/selectbox/SelectBox";
 
 const RentPricesHomeSituationNumberOfRoomsSelectBox = () => {
   return (
-        <div className=" flex justify-around mt-6">
+        <div className="flex justify-around mt-3">
             <div>
                 <SelectBox 
                     firstOptionValueShowed={'چی نوع'}
                     listOfSelectBoxValues={homeSituation}
-
                 />
             </div>
             <div>
