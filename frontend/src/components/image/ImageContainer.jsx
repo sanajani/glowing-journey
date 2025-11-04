@@ -1,6 +1,6 @@
-const ImageContainer = ({imageUrl, title}) => {
+const ImageContainer = ({imageUrl,styles , title}) => {
   return (
-    <div className="h-48 p-1 overflow-hidden" >
+    <div className={`p-1 overflow-hidden ${styles}`} >
       <img
         className="w-full h-full object-cover rounded-lg p-2"
         src={imageUrl}

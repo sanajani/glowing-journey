@@ -6,6 +6,9 @@ import RootLayout from '../layouts/RootLayout';
 // pages
 import Home from '../pages/Home';
 import About from '../pages/About';
+// import ShowHomeSingleData from '../components/homePageComponent/ShowHomeSingleData';
+
+import ShowHomeSingleData from '../pages/ShowHomeSingleData';
 
 export const router = createBrowserRouter([
     {
@@ -21,8 +24,8 @@ export const router = createBrowserRouter([
                 element: <About />
             },
             {
-                path: '/contact',
-                element: <h1>Contact</h1>
+                path: '/singlepage',
+                element: <ShowHomeSingleData />
             },
 
         ]
