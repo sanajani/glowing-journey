@@ -8,7 +8,7 @@ import Home from '../pages/Home';
 import About from '../pages/About';
 // import ShowHomeSingleData from '../components/homePageComponent/ShowHomeSingleData';
 
-import ShowHomeSingleData from '../pages/ShowHomeSingleData';
+import SingleHome from '../pages/SingleHome';
 
 export const router = createBrowserRouter([
     {
@@ -25,7 +25,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/singlepage',
-                element: <ShowHomeSingleData />
+                element: <SingleHome />
             },
 
         ]
