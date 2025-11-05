@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 
 let imageaddress = 'https://a0.muscache.com/im/pictures/dc9f2e94-efda-4bd2-a0f4-2bde6152b9a9.jpg?im_w=1200'
 let imageaddress1 = 'https://a0.muscache.com/im/pictures/7f2f5963-3324-4996-8259-4fd06599992f.jpg?im_w=720'
@@ -12,19 +11,17 @@ const ImageCaruselComponentMobile = () => {
   return (
     <div className="relative m-3 h-96 ">
         <div className="grid grid-flow-col overflow-hidden auto-cols-[100%] overflow-x-auto snap-x snap-mandatory scroll-smooth touch-pan-x no-scrollbar [direction:ltr] gap-3">
-            <Link to='/about/new-component'>
-                <ImageContainer imageUrl={imageaddress1} className={'snap-center'}/>
-            </Link>
-            <ImageContainer imageUrl={imageaddress2} className={'snap-center'}/>
-            <ImageContainer imageUrl={imageaddress3} className={'snap-center'}/>
-            <ImageContainer imageUrl={imageaddress4} className={'snap-center'}/>
-            <ImageContainer imageUrl={imageaddress} className={'snap-center'}/>
-            <ImageContainer imageUrl={imageaddress} className={'snap-center'}/>
-            <ImageContainer imageUrl={imageaddress} className={'snap-center'}/>
-            <ImageContainer imageUrl={imageaddress} className={'snap-center'}/>
-            <ImageContainer imageUrl={imageaddress} className={'snap-center'}/>
-            <ImageContainer imageUrl={imageaddress} className={'snap-center'}/>
-            <ImageContainer imageUrl={imageaddress} className={'snap-center'}/>
+            <ImageContainer clickAble={true} linkTo={'/propertyGallery'} imageUrl={imageaddress1} className={'snap-center'}/>
+            <ImageContainer clickAble={true} linkTo={'/propertyGallery'} imageUrl={imageaddress2} className={'snap-center'}/>
+            <ImageContainer clickAble={true} linkTo={'/propertyGallery'} imageUrl={imageaddress3} className={'snap-center'}/>
+            <ImageContainer clickAble={true} linkTo={'/propertyGallery'} imageUrl={imageaddress4} className={'snap-center'}/>
+            <ImageContainer clickAble={true} linkTo={'/propertyGallery'} imageUrl={imageaddress} className={'snap-center'}/>
+            <ImageContainer clickAble={true} linkTo={'/propertyGallery'} imageUrl={imageaddress} className={'snap-center'}/>
+            <ImageContainer clickAble={true} linkTo={'/propertyGallery'} imageUrl={imageaddress} className={'snap-center'}/>
+            <ImageContainer clickAble={true} linkTo={'/propertyGallery'} imageUrl={imageaddress} className={'snap-center'}/>
+            <ImageContainer clickAble={true} linkTo={'/propertyGallery'} imageUrl={imageaddress} className={'snap-center'}/>
+            <ImageContainer clickAble={true} linkTo={'/propertyGallery'} imageUrl={imageaddress} className={'snap-center'}/>
+            <ImageContainer clickAble={true} linkTo={'/propertyGallery'} imageUrl={imageaddress} className={'snap-center'}/>
         </div>
         <span className="bg-black z-50 text-white text-xl w-20 text-center absolute m-2 rounded-xl top-0 right-0 block">
             4 / 19

@@ -16,7 +16,7 @@ const ImageContainer = ({
   className, 
   title = "Property image", 
   clickAble = false, 
-  linkTo, 
+  linkTo,
   onClick, 
   lazyLoad = true, 
   overlayText 

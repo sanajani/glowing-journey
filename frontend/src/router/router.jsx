@@ -5,9 +5,9 @@ import RootLayout from '../layouts/RootLayout';
 
 // pages
 import Home from '../pages/Home';
-import About, { NewComponent } from '../pages/About';
-// import ShowHomeSingleData from '../components/homePageComponent/ShowHomeSingleData';
+import About from '../pages/About';
 import SingleHome from '../pages/SingleHome';
+import PropertyGallery from '../components/ui/image/PropertyGallery';
 
 export const router = createBrowserRouter([
     {
@@ -27,8 +27,8 @@ export const router = createBrowserRouter([
                 element: <SingleHome />
             },
             {
-                path: '/about/new-component',
-                element: <NewComponent />
+                path: '/propertyGallery', // I will add id to retrive images we need id
+                element: <PropertyGallery />
             }
 
         ]

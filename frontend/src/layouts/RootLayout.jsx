@@ -7,10 +7,13 @@ const RootLayout = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main className="min-h-screen h-[500vh] relative top-40 lg:w-[70%] mx-auto">
+      {/* <main className="min-h-screen relative top-40 lg:w-[70%] mx-auto"> */}
+      <main className="min-h-screen mt-40 lg:w-[70%] mx-auto">
         <Outlet />
       </main>
-      <footer>footer</footer>
+      <footer className="bg-gray-100 mt-3 text-center ">
+        © 2026 Your Company. All rights reserved.
+      </footer>
     </div>
   )
 }
