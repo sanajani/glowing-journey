@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useMemo } from 'react';
 
-// hooks
+// custom hooks
 import { useHasError } from "../../../hooks/useHasError";
 import { useIsLoading } from "../../../hooks/useIsLoading";
-
 
 // components 
 import { Loading } from "../../loadingAndError/Loading";
@@ -26,13 +26,17 @@ const ImageContainer = ({
 
   const Wrapper = clickAble && linkTo ? Link : clickAble ? "button" : 'div';
 
-  const wrapperProps = {
-    className: `relative bg-red-500 overflow-hidden rounded-lg ${className} ${
-      clickAble ? 'cursor-pointer hover:shadow-lg transition-shadow duration-200' : ''
-    }`,  
+  // Memoized to prevent unnecessary re-renders
+  const wrapperProps = useMemo(() => (
+    { 
+      className: `relative overflow-hidden rounded-lg ${className} ${clickAble ? 'cursor-pointer hover:shadow-lg transition-shadow duration-200' : ''}`,
     ...(clickAble && linkTo ? { to: linkTo } : {}),
-    ...(clickAble && !linkTo ? { onClick } : {})
-  };
+    ...(clickAble && !linkTo ? { 
+      onClick,
+      'aria-label': `View ${title}`,
+      type: 'button'
+    } : {})
+  }), [clickAble, linkTo, className, onClick, title]);
 
   return (
     <Wrapper {...wrapperProps}>
@@ -52,7 +56,7 @@ const ImageContainer = ({
       )}
 
       {/* Overlay Text */}
-      {overlayText && (<OverlayText overlayText/>)}
+      {overlayText && <OverlayText text={overlayText} />}
     </Wrapper>
   );
 };

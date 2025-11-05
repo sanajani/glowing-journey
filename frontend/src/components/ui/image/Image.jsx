@@ -6,7 +6,7 @@ const Image = ({
   onError, 
   onLoad 
 }) => {
-  console.log('Image loading state:', isLoading);
+  if(!imageUrl) return <div className={`w-full h-full object-cover transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>No Image</div>
     
   return (
     <img
