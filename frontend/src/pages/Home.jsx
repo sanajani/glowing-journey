@@ -1,5 +1,5 @@
 
-import ShowHousesInHomePage from "../components/homePageComponent/ShowHousesInHomePage"
+import ShowHousesInHomePage from "../components/home/ShowHousesInHomePage"
 
 const Home = () => {
   return (
