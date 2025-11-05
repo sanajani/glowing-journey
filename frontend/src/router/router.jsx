@@ -5,9 +5,8 @@ import RootLayout from '../layouts/RootLayout';
 
 // pages
 import Home from '../pages/Home';
-import About from '../pages/About';
+import About, { NewComponent } from '../pages/About';
 // import ShowHomeSingleData from '../components/homePageComponent/ShowHomeSingleData';
-
 import SingleHome from '../pages/SingleHome';
 
 export const router = createBrowserRouter([
@@ -27,6 +26,10 @@ export const router = createBrowserRouter([
                 path: '/singlepage',
                 element: <SingleHome />
             },
+            {
+                path: '/about/new-component',
+                element: <NewComponent />
+            }
 
         ]
     }

@@ -1,4 +1,3 @@
-// import { image1 } from "../assets/images"
 
 import ImagesComponentDesktop from "../components/desktop/ImagesComponentDesktop"
 import ImageCaruselComponentMobile from "../components/mobile/ImageCaruselComponentMobile"
