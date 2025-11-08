@@ -9,7 +9,7 @@ import ImageContainer from '../ui/image/ImageContainer'
 
 const ImageCaruselComponentMobile = () => {
   return (
-    <div className="relative m-3 h-96 ">
+    <div className="relative m-3 p-3 max-h-96">
         <div className="grid grid-flow-col overflow-hidden auto-cols-[100%] overflow-x-auto snap-x snap-mandatory scroll-smooth touch-pan-x no-scrollbar [direction:ltr] gap-3">
             <ImageContainer clickAble={true} linkTo={'/propertyGallery'} imageUrl={imageaddress1} className={'snap-center'}/>
             <ImageContainer clickAble={true} linkTo={'/propertyGallery'} imageUrl={imageaddress2} className={'snap-center'}/>
@@ -23,7 +23,7 @@ const ImageCaruselComponentMobile = () => {
             <ImageContainer clickAble={true} linkTo={'/propertyGallery'} imageUrl={imageaddress} className={'snap-center'}/>
             <ImageContainer clickAble={true} linkTo={'/propertyGallery'} imageUrl={imageaddress} className={'snap-center'}/>
         </div>
-        <span className="bg-black z-50 text-white text-xl w-20 text-center absolute m-2 rounded-xl top-0 right-0 block">
+        <span className="bg-black z-5 text-white text-xl w-20 text-center absolute m-2 rounded-xl top-2 right-2 block">
             4 / 19
         </span>
     </div>

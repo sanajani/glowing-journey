@@ -51,6 +51,8 @@ const propertyImages = [
   }
 ];
 
+
+
 const PropertyGallery = () => {
   return (
     <div className="min-h-screen mt-4 grid grid-cols-2 gap-3 w-full">
