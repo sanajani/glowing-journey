@@ -2,12 +2,19 @@ import { afghanistanProvinces } from "../../../utils/Afg_Province_Config";
 import Button from "../../ui/Button";
 import SelectBox from "../../ui/selectbox/SelectBox";
 
+import { Link } from "react-router-dom";
+
+import { useLocation } from "react-router-dom";
+
 const SelectBoxAndSearchButton = () => {
+  const {pathname} = useLocation();
+  
   return (
     <div className="flex px-4 gap-4 mb-2">
+      {pathname !== '/' && <Link className="flex items-center" to={'/'}>مینو اصلی</Link>}
       <Button
         text={"سرچ کنید"}
-        containerStyle=" hover:bg-gray-800 transition-colors text-lg border px-2 rounded-lg"
+        containerStyle=" hover:text-white cursor-pointer hover:bg-gray-800 transition-colors text-lg border px-2 rounded-lg"
       />
       <div className="flex-1">
         <SelectBox

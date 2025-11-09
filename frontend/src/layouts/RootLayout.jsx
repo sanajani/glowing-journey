@@ -1,8 +1,11 @@
 // imported Navbar Component
 import { Outlet } from "react-router-dom"
 import Navbar from "../components/navbar/Navbar"
+// import { useState } from "react";
 
 const RootLayout = () => {
+
+  
   return (
     <div className="min-h-screen relative">
       <Navbar />
