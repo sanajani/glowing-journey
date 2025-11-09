@@ -1,11 +1,10 @@
-
 // imported Navbar Component
 import { Outlet } from "react-router-dom"
 import Navbar from "../components/navbar/Navbar"
 
 const RootLayout = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
       <Navbar />
       {/* <main className="min-h-screen relative top-40 lg:w-[70%] mx-auto"> */}
       <main className="min-h-screen mt-40 lg:w-[70%] mx-auto">
