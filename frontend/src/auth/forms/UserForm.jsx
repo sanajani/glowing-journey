@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 // import FormField from "../../components/form/FormField";
 import FormField from "../../components/form/InputLabel";
 
-const UserForm = ({ register, errors, setShowDealerForm, isValid }) => {
+const UserForm = ({ register, errors, setShowDealerForm, isValid, setUserType }) => {
   const [showMessage, setShowMessage] = useState(false);
 
   const showDealerFormHandler = () => {
@@ -13,6 +13,7 @@ const UserForm = ({ register, errors, setShowDealerForm, isValid }) => {
     } else {
       setShowDealerForm(true);
       setShowMessage(false);
+      setUserType('dealer');
     }
   };
 
@@ -25,7 +26,7 @@ const UserForm = ({ register, errors, setShowDealerForm, isValid }) => {
   }, [showMessage]);
 
   return (
-    <div className="md:w-4/5 gap-5 mx-auto bg-white rounded-xl shadow-lg p-6 space-y-6 md:grid grid-cols-2">
+    <div className="md:w-4/5 gap-5 mx-auto bg-white rounded-xl shadow-lg p-6 md:grid grid-cols-2">
       {/* Name Field */}
       <FormField
         label="نام"
@@ -88,7 +89,7 @@ const UserForm = ({ register, errors, setShowDealerForm, isValid }) => {
         </div>
       </div>
       
-      <div className="col-span-2 gap-8 mt-4 flex justify-between">
+      <div className="col-span-2 gap-8 md:gap-3 mt-4 flex justify-between">
         <Link
           className="border-b flex-1 pb-2 text-lg text-green-700 font-bold"
           to="/auth/signup"

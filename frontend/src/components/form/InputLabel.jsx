@@ -12,7 +12,7 @@ const FormField = ({
   ...inputProps
 }) => {
   return (
-    <div className="space-y-2 text-right">
+    <div className="md:space-y-2 space-y-1 text-right">
       <label
         htmlFor={id}
         className="block text-sm font-medium text-gray-700 mr-2"

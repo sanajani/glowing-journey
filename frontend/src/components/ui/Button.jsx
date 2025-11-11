@@ -17,20 +17,12 @@ const Button = ({
   text, 
   containerStyle, 
   type = "button", 
-  onClick, 
-  disabled = false,
-  onMouseEnter,
-  onMouseLeave,
   ...props 
 }) => {
   return (
     <button 
       type={type} 
       className={containerStyle}
-      onClick={onClick}
-      disabled={disabled}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
       {...props}
     >
       {text}
