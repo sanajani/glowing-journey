@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 
 import Button from "../../components/ui/Button";
-import FormField from "../../components/form/InputLabel";
+import FormField from "../../components/form/FormField";
+import LinksInsideForm from "../../components/form/LinksInsideForm";
 
 const DealerForm = ({ register, errors, onBack }) => {
 
@@ -11,10 +12,10 @@ const DealerForm = ({ register, errors, onBack }) => {
       <FormField
         label="شماره"
         type="text"
-        id="phoneNumber"
+        id="phoneNumber1"
         placeholder="شماره خود را وارد کنید"
         register={register}
-        error={errors?.phoneNumber?.message}
+        error={errors?.phoneNumber1?.message}
       />
 
       {/* number 2 Field */}
@@ -27,24 +28,24 @@ const DealerForm = ({ register, errors, onBack }) => {
         error={errors?.phoneNumber2?.message}
       />
 
-      {/* province Field */}
+      {/* city Field */}
       <FormField
         label="ولایت "
         type="text"
-        id="province"
+        id="city"
         placeholder=" ولایت شما الزامی است"
         register={register}
-        error={errors?.province?.message}
+        error={errors?.city?.message}
       />
 
-      {/* city Field */}
+      {/* province Field */}
       <FormField
         label="شهر"
         type="text"
-        id="city"
+        id="province"
         placeholder="شهر را وارد کنید"
         register={register}
-        error={errors?.city?.message}
+        error={errors?.province?.message}
       />
 
             {/* district Field */}
@@ -81,21 +82,8 @@ const DealerForm = ({ register, errors, onBack }) => {
           containerStyle="bg-green-900 h-full text-white cursor-pointer flex-1 py-3 rounded-lg"
         />
       </div>
-      
-      <div className="col-span-2 flex justify-between gap-4">
-        <Link
-          className="flex-1 border-b text-sm md:text-lg py-2 font-bold rounded-lg bg-green-900 text-white"
-          to="/auth/signup"
-        >
-          از قبل اکانت دارم
-        </Link>
-        <Link
-          className="flex-1 text-sm md:text-lg border-b text-white bg-blue-900 font-bold py-2 rounded-lg"
-          to="/"
-        >
-          رفتن ب مینو اصلی
-        </Link>
-      </div>
+
+      <LinksInsideForm link1='/' link2='/auth/signup' textLink1='مینو اصلی' textLink2=' از قبل اکانت دارم' />
     </div>
   );
 };

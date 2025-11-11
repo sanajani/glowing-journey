@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import Button from "../../components/ui/Button";
 import { useEffect, useState } from "react";
 // import FormField from "../../components/form/FormField";
-import FormField from "../../components/form/InputLabel";
+import FormField from "../../components/form/FormField";
+import LinksInsideForm from "../../components/form/LinksInsideForm";
+import Buttons from "./Buttons";
 
 const UserForm = ({ register, errors, setShowDealerForm, isValid, setUserType }) => {
   const [showMessage, setShowMessage] = useState(false);
@@ -67,42 +69,11 @@ const UserForm = ({ register, errors, setShowDealerForm, isValid, setUserType })
         error={errors?.password?.message}
       />
 
-      {/* Rest of your existing code remains the same */}
-      <div className="space-y-2 flex flex-col md:flex-row gap-4 col-span-2">
-        <Button
-          type="submit"
-          text={"دنبال خانه استم"}
-          containerStyle="bg-blue-800 h-full text-white cursor-pointer flex-1 py-3 rounded-lg"
-        />
-        <div className="flex-1 relative">
-          <Button
-            type="button"
-            onClick={showDealerFormHandler}
-            text={"دفتر معاملات دارم"}
-            containerStyle={`${isValid ? 'cursor-pointer' : 'cursor-not-allowed'} w-full bg-green-800 h-full text-white py-3 rounded-lg`}
-          />
-          {showMessage && (
-            <p className="absolute -bottom-7 text-sm text-red-600 right-0">
-              ⚠️ لطفا تمام فیلدهای ضروری را پر کنید
-            </p>
-          )}
-        </div>
-      </div>
-      
-      <div className="col-span-2 gap-8 md:gap-3 mt-4 flex justify-between">
-        <Link
-          className="border-b flex-1 pb-2 text-lg text-green-700 font-bold"
-          to="/auth/signup"
-        >
-          از قبل اکانت دارم
-        </Link>
-        <Link
-          className="flex-1 pb-2 text-lg border-b text-blue-700 font-bold"
-          to="/"
-        >
-          رفتن ب مینو اصلی
-        </Link>
-      </div>
+      <Buttons  showDealerFormHandler={showDealerFormHandler} isValid={isValid} showMessage={showMessage} />
+
+      {/* <LinksInsideForm /> */}
+      <LinksInsideForm link1='/' link2='/auth/signup' textLink1='مینو اصلی' textLink2=' از قبل اکانت دارم' />
+
     </div>
   );
 };
