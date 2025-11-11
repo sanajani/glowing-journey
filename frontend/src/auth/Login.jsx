@@ -1,26 +1,9 @@
 
-// let data = [
-//   {
-//     phoneNumber1,
-//     phoneNumber2,
-//     details:{  
-//       avatar,
-//       nationalIdCard,
-//     },
-//     contactInfo:{
-//     province,
-//     district,
-//     city,
-//     streetAddress
-//   }
-// }
-// ]
-
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 
-const loginSchema = yup.object({
+const baseSchema = yup.object({
   name: yup
   .string()
   .required("نام الزامی است")
@@ -45,6 +28,15 @@ const loginSchema = yup.object({
     ),
 })
 
+const dealerSchema = baseSchema.concat(yup.object({
+  phoneNumber1: yup.string().required('شماره تماس الزامی است'),
+  phoneNumber2: yup.string(),
+  province: yup.string().required(' شهر الزامی است'),
+  district: yup.string().required('ناحیه الزامی است'),
+  city: yup.string().required('ولایت الزامی است'),
+  streetAddress: yup.string().required('آدرس الزامی است'),
+
+}))
 
 import { useState } from 'react'
 import UserForm from './forms/UserForm'
@@ -54,7 +46,7 @@ const Login = () => {
   // state variables
   const [showDealerForm, setShowDealerForm] = useState(false);
 
-  const { register, handleSubmit, formState:{errors, isValid} } = useForm({resolver: yupResolver(loginSchema), mode: 'onTouched'});
+  const { register, handleSubmit, formState:{errors, isValid} } = useForm({resolver: yupResolver(baseSchema), mode: 'onTouched'});
 
   const formSubmit = (values) => {
     console.log(values);
