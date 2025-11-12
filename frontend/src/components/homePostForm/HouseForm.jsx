@@ -9,46 +9,6 @@ import Prices_5 from "./Prices_5";
 import Media from "./Media";
 
 const HouseForm = () => {
-  const [formData, setFormData] = useState({
-    title: "",
-    description: "",
-    houseType: "",
-    transactionType: "",
-    province: "",
-    city: "",
-    district: "",
-    streetAddress: "",
-    landmark: "",
-    bedrooms: "",
-    bathrooms: "",
-    area:0,
-    floor:0,
-    totalFloor:0,
-    yearBuilt:0,
-    furniture: "",
-    parking: "",
-    security: "",
-    amenities: {
-      parking: false,
-      elevator: false,
-      security: false,
-      garden: false,
-      pool: false,
-      balcony: false,
-      ac: false,
-      heating: false,
-      internet: false,
-      cable_tv: false,
-      pet_friendly: false,
-      furnical: false,
-    },
-    amount: "",
-    currency: "AFN",
-    period: "",
-    negotiable: false,
-  });
-
-
   return (
     <div dir="rtl" className="max-w-6xl mx-auto p-6 bg-white shadow-lg rounded-xl">
       <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">
