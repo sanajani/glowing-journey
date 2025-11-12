@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
 import Button from "../../components/ui/Button";
-import FormField from "../../components/form/FormField";
-import LinksInsideForm from "../../components/form/LinksInsideForm";
+import FormField from '../forms/FormField'
+import LinksInsideForm from "../forms/LinksInsideForm";
 
 const DealerForm = ({ register, errors, onBack }) => {
 

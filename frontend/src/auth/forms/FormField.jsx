@@ -1,5 +1,6 @@
 // components/form/FormField.jsx
-import ErrorText from "../ErrorText";
+// import ErrorText from "../ErrorText";
+import ErrorText from '../../components/ErrorText'
 
 const FormField = ({
   label,

@@ -1,10 +1,7 @@
-import { Link } from "react-router-dom";
-import Button from "../../components/ui/Button";
 import { useEffect, useState } from "react";
-// import FormField from "../../components/form/FormField";
-import FormField from "../../components/form/FormField";
-import LinksInsideForm from "../../components/form/LinksInsideForm";
+import LinksInsideForm from "./LinksInsideForm";
 import Buttons from "./Buttons";
+import FormField from "./FormField";
 
 const UserForm = ({ register, errors, setShowDealerForm, isValid, setUserType }) => {
   const [showMessage, setShowMessage] = useState(false);

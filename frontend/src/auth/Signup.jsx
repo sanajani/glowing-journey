@@ -2,9 +2,10 @@
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
-import FormField from '../components/form/FormField'
+// import FormField from '../components/form/FormField'
+import FormField from './forms/FormField'
 import Button from '../components/ui/Button'
-import LinksInsideForm from '../components/form/LinksInsideForm'
+import LinksInsideForm from './forms/LinksInsideForm'
 const baseSchema = yup.object({
   name: yup
   .string()

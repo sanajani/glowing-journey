@@ -10,7 +10,7 @@ const RootLayout = () => {
     <div className="min-h-screen relative">
       <Navbar />
       {/* <main className="min-h-screen relative top-40 lg:w-[70%] mx-auto"> */}
-      <main className="min-h-screen mt-40 lg:w-[70%] mx-auto">
+      <main className="min-h-screen mt-44 lg:w-[70%] mx-auto">
         <Outlet />
       </main>
       <footer className="bg-gray-100 mt-3 text-center ">

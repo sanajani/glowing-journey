@@ -3,10 +3,11 @@ import { useMemo } from 'react';
 
 // custom hooks
 import { useHasError } from "../../../hooks/useHasError";
-import { useIsLoading } from "../../../hooks/useIsLoading";
+import {useIsLoading} from '../../../hooks/useIsLoading';
 
 // components 
 import { Loading } from "../../loadingAndError/Loading";
+// import {Loading}
 import HasError from "../../loadingAndError/HasError";
 import Image from "./Image"; 
 import OverlayText from '../../OverlayText';

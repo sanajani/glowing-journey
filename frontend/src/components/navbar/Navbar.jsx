@@ -52,6 +52,7 @@ const Navbar = () => {
         <div className="w-full h-full flex flex-col text-center gap-5 justify-center">
           <Link to='/auth/login' className="text-xl cursor-pointer py-2 bg-blue-600 hover:bg-blue-800 transition-colors text-white border-2 border-gray-400">Login</Link>
           <Link to='/auth/signup' className="text-xl cursor-pointer py-2 bg-blue-700 hover:bg-blue-800 transition-colors text-white border-2 border-gray-400">Signup</Link>
+          <Link onClick={() => setShowTopBar(false)} to='/admin/houseform' className="text-xl cursor-pointer py-2 bg-blue-700 hover:bg-blue-800 transition-colors text-white border-2 border-gray-400">post house</Link>
         </div>
       </div>
     </div>

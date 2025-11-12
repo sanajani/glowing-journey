@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Outlet } from 'react-router-dom';
 
 // layouts
 import RootLayout from '../layouts/RootLayout';
@@ -11,6 +11,7 @@ import PropertyGallery from '../components/ui/image/PropertyGallery';
 import Signup from '../auth/Signup';
 import Login from '../auth/Login';
 import AuthLayout from '../layouts/AuthLayout';
+import ShowHouseForm from '../pages/ShowHouseForm';
 
 export const router = createBrowserRouter([
     {
@@ -33,7 +34,6 @@ export const router = createBrowserRouter([
                 path: 'propertyGallery', // I will add id to retrive images we need id
                 element: <PropertyGallery />
             }
-
         ]
     },
     {
@@ -47,6 +47,16 @@ export const router = createBrowserRouter([
             {
                 path:'signup',
                 element:<Signup/>
+            }
+        ]
+    },
+    {
+        path: '/admin',
+        element: <h1>Admin dashboard <Outlet/> </h1>,
+        children:[
+            {
+                path: 'houseform',
+                element: <ShowHouseForm />
             }
         ]
     }
