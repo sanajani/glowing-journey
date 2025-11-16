@@ -1,17 +1,16 @@
 import express from 'express';
-import { createUserController, getAllUsersController, loginUserController } from '../controller/UserController.js';
+import { createUserController, getAllUsersController, loginUserController, userProfile } from '../controller/UserController.js';
+import { protect } from '../middleware/protected/protectAuth.js';
 
 const router = express.Router();
 
-
 // for all the users or many users
-router.route("/users")
-.get(getAllUsersController)
-.post(createUserController)
+router.get("/users",getAllUsersController)
 
-// const {email, password, confirmPassword, phoneNumber1, phoneNumber2,profile:{name, lastName, avatar, nationalIdCard}, contact:{province, city, district, streetAddress,coordinate}, role } = req.body;
+router.post("/signup",createUserController)
 
-router.route("/loginuser")
-.post(loginUserController)
+router.post("/login", loginUserController)
+
+router.get("/profile",protect, userProfile)
 
 export default router

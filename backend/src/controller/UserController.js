@@ -11,7 +11,6 @@ export const createUserController = catchAsync(async (req,res,next) => {
     })
 })
 
-
 export const getAllUsersController = catchAsync(async (req,res,next) => {
     const users = await getAllUsers();
     res.status(200).json({
@@ -31,3 +30,18 @@ export const loginUserController = catchAsync(async (req,res,next) => {
         data: loginInfo
     })
 })
+
+
+export const userProfile = (req,res,next) => {
+    const user = req.user;
+    if(!user) return res.status(409).json({
+        message:"User not exist profile route",
+        status:"Error profile"
+    })
+    const userRole = user.role;
+
+    return res.status(200).json({
+        message: userRole,
+        status:"Success"
+    })
+}
