@@ -21,7 +21,7 @@ const agentSchema = new Schema({
         coordinate: { type: String, required: true }
     },
     company: {
-        name: { type: String, required: true },
+        companyName: { type: String, required: true },
         licenseNumber: { type: String, required: true }
     }
 });

@@ -3,6 +3,12 @@ import mongoose, { Schema } from "mongoose";
 import bcrypt from "bcryptjs";
 
 const baseUserSchema = new Schema({
+    username:{
+        type: String,
+        unique: true,
+        lowercase:true,
+        index:true
+    },
     email:{
         type: String,
         unique: true,

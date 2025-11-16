@@ -1,10 +1,12 @@
 import { AppError } from "../utilities/appError.js";
 
 export const errorHandler = (err,req,res,next) => {
-    err.status = err.status || 500;
+    err.statusCode = err.statusCode || 500;
+    console.log(err);
+    
 
     if(err instanceof AppError){
-        return res.status(err.status).json({
+        return res.status(err.statusCode).json({
             message: err.message,
             status:"error"       
         })

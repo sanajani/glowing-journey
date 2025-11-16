@@ -11,7 +11,7 @@ const landlordSchema = new Schema({
     phoneNumber2: {
         type: String,
         unique: true,
-        sparse: true
+        sparse: true,
     },
     contact: {
         province: { type: String, required: true },
