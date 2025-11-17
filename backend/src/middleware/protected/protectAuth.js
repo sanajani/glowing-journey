@@ -3,19 +3,21 @@ import jwt from 'jsonwebtoken';
 import catchAsync from "../../utilities/catchAsync.js";
 import { AppError } from "../../utilities/appError.js";
 
+const JWTTOKENCODE = process.env.JWTTOKENCODEENV || 'this is code'
+
 export const protect = catchAsync(async (req,res,next) => {
     let token;
     
     if(req.headers.authorization && req.headers.authorization.startsWith("Bearer")) {
         token = req?.headers?.authorization?.split(' ')[1]
     }
-    if(!token) throw new AppError("Not authorized", 499, 'error');
+    if(!token) return next(AppError.unauthorized("No token provided. please login"))
 
-    const {_id} = jwt.verify(token,'thisisseceretkey',);
+    const {_id} = jwt.verify(token,JWTTOKENCODE);
 
     const user = await User.findById(_id)
 
-    if(!user) throw new AppError("User no longer exist", 401, 'error')
+    if(!user) return next(AppError.unauthorized("Unauthorized User"))
 
     req.user = user;
 

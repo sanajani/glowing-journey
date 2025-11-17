@@ -1,5 +1,7 @@
+import dotenv from 'dotenv';
+dotenv.config();
 import express from 'express';
-import dbConnection from './services/databaseConnection.js';
+import dbConnection from './services/database_servecies/databaseConnection.js';
 
 // routes
 import userRoutes from './routes/UserRoute.js'

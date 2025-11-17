@@ -17,7 +17,7 @@ const baseUserSchema = new Schema({
     password:{
         type: String,
         required: [true, 'Password is Required'],
-        minlength: [8, 'Password must be at least 8 characters'],
+        minlength: [4, 'Password must be at least 4 characters'],
         select: false
     },
     profile:{
@@ -39,8 +39,29 @@ const baseUserSchema = new Schema({
         type: String,
         enum: ['tenant','landlord','agent','admin'],
         default: 'tenant'
+    },
+      phoneNumber1: {
+        type: String,
+        unique: true,
+        sparse: true,
+    },
+    phoneNumber2: {
+        type: String,
+        unique: true,
+        sparse: true,
+    },
+    contact: {
+        province: { type: String},
+        city: { type: String},
+        district: { type: String},
+        streetAddress: { type: String},
+        coordinate: { type: String}
+    },
+    company: {
+        companyName: { type: String},
+        licenseNumber: { type: String}
     }
-},{timestamps: true, discriminatorKey:'role'})
+},{timestamps: true})
 
 baseUserSchema.pre("save", async function(next) {
     if(!this.isModified("password")) return next();
