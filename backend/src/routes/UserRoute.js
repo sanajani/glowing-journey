@@ -1,17 +1,21 @@
 import express from 'express';
-import { becomeSellerController, createUserController, loginUserController, userProfileController } from '../controller/UserController.js';
+import { becomeSellerController, createUserController, loginUserController, updateUserController, userProfileController } from '../controller/UserController.js';
 import { protect } from '../middleware/protected/protectAuth.js';
 
 const router = express.Router();
 
 // for all the users or many users
 // "/api/v1/"
-router.post("/signup",createUserController)
-router.post("/login", loginUserController)
+router.post("/signup",createUserController);
+router.post("/login", loginUserController);
 
 // protected routes
-router.get("/profile",protect, userProfileController);
+router.get("/user/profile",protect, userProfileController);
+router.put("/profile/update",protect, updateUserController);
 
-router.put("/become-seller",protect,becomeSellerController)
+// becomeSeller
+router.put("/become-seller",protect,becomeSellerController);
 
-export default router
+// changePassword
+
+export default router;

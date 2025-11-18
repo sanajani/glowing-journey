@@ -3,6 +3,8 @@ import { User } from "../../models/User/User.js";
 import { validateRequiredFields } from "../../utilities/validation/ValidationFieldsUserAccount.js";
 
 import jwt from 'jsonwebtoken';
+import { checkPhoneDuplicates } from "../../utilities/validation/checkDuplicatesSingleQuery.js";
+import { theseFieldsShouldBeUpdated } from "../../utilities/fieldsToUpdate/FieldsToUpdate.js";
 const JWTTOKENCODE = process.env.JWTTOKENCODEENV || 'this is code'
 // signup user
 export const createUser = async (userData) => {
@@ -70,22 +72,21 @@ export const becomeSeller = async (_id, userData={}) => {
     if(!user) throw AppError.validationError();
     return user;
 }
-
+// updateSingle user
 export const updateUser = async (_id, userData={}) => {
-    const checkUser = await User.findOne({
-        $or:[
-            {phoneNumber1: userData.phoneNumber1 },
-            {phoneNumber2: userData?.phoneNumber2},
-        ]
-    });
 
-    if(checkUser && checkUser._id?.toString() !== _id.toString()) 
-        throw AppError.duplicateField("phoneNumber1 phoneNumber2 companyname and licenseNumber should be unique",'duplicate fileds')
-    
-    const user = await User.findByIdAndUpdate(_id, userData, {new: true, runValidators: true});
-    
-    console.log('=================================become seller service===============================================');
+    checkPhoneDuplicates(_id,userData);
+    const updateFields = theseFieldsShouldBeUpdated(userData);
+    const user = await User.findByIdAndUpdate(_id, {$set: updateFields}, {new: true, runValidators: true});
     
     if(!user) throw AppError.validationError();
     return user;
+}
+// show user profile
+
+export const userProfile = async (_id) => {
+    const user = await User.findById(_id);
+    if(!user) throw AppError.validationError();
+
+    return user
 }

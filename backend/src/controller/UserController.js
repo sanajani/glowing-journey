@@ -1,4 +1,5 @@
-import { becomeSeller, createUser, loginUser } from "../services/user/userServices.js";
+import { becomeSeller, createUser, loginUser, updateUser, userProfile } from "../services/user/userServices.js";
+import AppError from "../utilities/appError.js";
 import catchAsync from "../utilities/catchAsync.js";
 import { validationFieldsBecomeSeller } from "../utilities/validation/validationFieldsBecomeSeller.js";
 
@@ -22,20 +23,18 @@ export const loginUserController = catchAsync(async (req,res,next) => {
         data: loginInfo
     })
 })
-// profile
-export const userProfileController = (req,res,next) => {
-    const user = req.user;
-    if(!user) return res.status(409).json({
-        message:"User not exist profile route",
-        status:"Error profile"
-    })
-    const userRole = user.role;
-
+// user profile
+export const userProfileController = catchAsync(async (req,res,next) => {
+    
+    const _id = req?.user?._id;
+    console.log('user profile',_id);
+    if(!_id) throw AppError.invalidCredentials("invalid token");
+    const userProfileContainer = await userProfile(_id);
     return res.status(200).json({
-        message: userRole,
-        status:"Success"
+        message:"Success",
+        data: userProfileContainer
     })
-}
+})
 // become seller;
 export const becomeSellerController = catchAsync(async (req,res,next) => {
     
@@ -51,4 +50,16 @@ export const becomeSellerController = catchAsync(async (req,res,next) => {
         message:"Success",
         data: nowYouAreSeller
     })
+})
+// update user
+export const updateUserController = catchAsync(async (req,res,next) => {
+    const user_id = req.user._id;
+    console.log(user_id);
+    
+    const updatedUser = await updateUser(user_id, req.body);
+    
+    return res.status(200).json({
+        message:"Success",
+        data: updatedUser
+    });
 })
