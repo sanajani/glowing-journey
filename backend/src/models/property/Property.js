@@ -1,6 +1,6 @@
 import {Schema, model} from 'mongoose';
 
-const ListingSchema = new Schema({
+const PropertySchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
@@ -71,4 +71,4 @@ const ListingSchema = new Schema({
     }]
 },{timestamps: true});
 
-export const Listing = model("listing", ListingSchema)
+export const Property = model("property", PropertySchema)

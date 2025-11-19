@@ -1,4 +1,4 @@
-export const theseFieldsShouldBeUpdated = (userData) => {
+export const theseUserFieldsShouldBeUpdated = (userData) => {
   const fieldsToUpdate = {};
   if (userData?.profile?.name) {
     fieldsToUpdate["profile.name"] = userData?.profile?.name;

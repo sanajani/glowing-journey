@@ -6,15 +6,15 @@ const router = express.Router();
 
 // for all the users or many users
 // "/api/v1/"
-router.post("/signup",createUserController);
-router.post("/login", loginUserController);
+router.post("/users",createUserController);
+router.post("/users/sessions", loginUserController);
 
 // protected routes
-router.get("/user/profile",protect, userProfileController);
-router.put("/profile/update",protect, updateUserController);
+router.get("/users/me/profile",protect, userProfileController);
+router.patch("/users/me/profile",protect, updateUserController);
 
 // becomeSeller
-router.put("/become-seller",protect,becomeSellerController);
+router.patch("/users/me/seller-status",protect,becomeSellerController);
 
 // changePassword
 

@@ -27,7 +27,6 @@ export const loginUserController = catchAsync(async (req,res,next) => {
 export const userProfileController = catchAsync(async (req,res,next) => {
     
     const _id = req?.user?._id;
-    console.log('user profile',_id);
     if(!_id) throw AppError.invalidCredentials("invalid token");
     const userProfileContainer = await userProfile(_id);
     return res.status(200).json({

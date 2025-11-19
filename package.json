@@ -1,5 +1,10 @@
 {
   "dependencies": {
-    "@vitejs/plugin-react": "^5.1.0"
+    "@vitejs/plugin-react": "^5.1.0",
+    "compression": "^1.8.1",
+    "cookie-session": "^2.1.1",
+    "debug": "^4.4.3",
+    "express-session": "^1.18.2",
+    "pino": "^10.1.0"
   }
 }

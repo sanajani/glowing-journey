@@ -1,6 +1,6 @@
 import { AppError } from "../appError.js";
 
-export const ListingHouseRequiredFields = (listingFields) => {
+export const PropertyRequiredFields = (listingFields) => {
     const {title, description, transaction, location, details, price, media} = listingFields;
 
       // Landlord and Agent specific fields
