@@ -15,7 +15,11 @@ export const createProperty = async (userId,propertyData) => {
 
 // get single Property services
 export const getPropertyById = async (propertyId) => {
-    const singlePorperty = await Property.findById(propertyId);
+    const singlePorperty = await Property.findById(propertyId).populate({
+        path: 'user',
+        select: "username profile.name profile.lastName phoneNumber1 phoneNumber2 company.companyName company.licenseNumber"
+    });
+    
     if(!singlePorperty) throw AppError.notFound("Property Not found or Deleted by auther");
 
     return singlePorperty;

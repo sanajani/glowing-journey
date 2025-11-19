@@ -3,6 +3,9 @@ export const propertyFieldsToUpdate = (propertyData) => {
     if(propertyData?.title){
         fields.title = propertyData.title
     }
+    if(propertyData?.propertyType){
+        fields.propertyType = propertyData.propertyType
+    }
     if(propertyData?.description){
         fields.description = propertyData.description
     }
