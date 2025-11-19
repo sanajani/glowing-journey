@@ -22,7 +22,12 @@ export const getPropertyById = async (propertyId) => {
 };
 
 // get single property and update it
-export const getPropertyByIdAndUpdate = async () => {}
+export const getPropertyByIdAndUpdate = async (propertyId, propertyData) => {    
+    const propertyToUpdate = await Property.findByIdAndUpdate(propertyId, {$set: propertyData}, {new: true, runValidators: true});
+    if(!propertyToUpdate) return next(AppError.resourceNotFound("Field to update your property"));
+
+    return propertyToUpdate;
+}
 
 // get single property and delete it
 export const getPropertyByIdAndDelete = async (propertyId) => {

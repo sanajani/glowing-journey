@@ -4,8 +4,6 @@ import { validateRequiredFields } from "../../utilities/validation/ValidationFie
 
 import jwt from 'jsonwebtoken';
 import { checkPhoneDuplicates } from "../../utilities/validation/checkDuplicatesSingleQuery.js";
-// import { theseUserFieldsShouldBeUpdated } from "../../utilities/fieldsToUpdate/UserFieldsToUpdate.js";
-import { theseUserFieldsShouldBeUpdated } from "../../utilities/fieldsToUpdate/UserFieldsToUpdate.js";
 
 const JWTTOKENCODE = process.env.JWTTOKENCODEENV || 'this is code'
 // signup user
@@ -79,7 +77,7 @@ export const becomeSeller = async (_id, userData={}) => {
 export const updateUser = async (_id, userData={}) => {
 
     checkPhoneDuplicates(_id,userData);
-    const updateFields = theseUserFieldsShouldBeUpdated(userData);
+    const updateFields = userData;
     const user = await User.findByIdAndUpdate(_id, {$set: updateFields}, {new: true, runValidators: true});
     
     if(!user) throw AppError.validationError();
