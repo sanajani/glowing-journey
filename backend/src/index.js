@@ -3,6 +3,7 @@ dotenv.config();
 import express from 'express';
 import dbConnection from './services/database_servecies/databaseConnection.js';
 import helmet from 'helmet';
+import cors from 'cors'
 
 // routes
 import userRoutes from './routes/UserRoute.js'
@@ -12,6 +13,7 @@ import propertyRouter from './routes/PropertyRoutes.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
 const app = express();
+app.use(cors())
 const port = process.env.PORT || 4940;
 app.use(express.json());
 app.use(helmet());

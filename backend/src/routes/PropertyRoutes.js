@@ -15,12 +15,12 @@ const router = express.Router();
 // /api/v1/properties
 router
   .route('/properties')
-  .post(protect, isAbleTolist, createPropertyController)
-  .get(getAllProperties);
+  .post(protect, isAbleTolist, createPropertyController) // create or post a property
+  .get(getAllProperties); // get all properties or filtered properties
 
 router
   .route('/properties/:id')
-  .get(getSinglePropertyController)
+  .get(getSinglePropertyController) // single property
   .patch(protect, isTheSameAuther, getSinglePropertyAndUpdateController)
   .delete(protect, isTheSameAuther, getSinglePropertyAndDeleteController);
 export default router;

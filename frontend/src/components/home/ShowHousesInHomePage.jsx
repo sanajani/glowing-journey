@@ -6,7 +6,6 @@ import TitleDescComp from "./TitleDescComp"
 import SpanInsideHomePage from "./SpanInsideHomePage"
 
 import { Link } from "react-router-dom"
-
 const ShowHousesInHomePage = () => {
   return (
        <div className="grid mt-9 grid-cols md:grid-cols-2 lg:grid-cols-3 gap-6">

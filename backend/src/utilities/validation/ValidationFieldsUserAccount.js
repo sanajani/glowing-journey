@@ -1,6 +1,6 @@
 import { AppError } from "../appError.js";
 
-export const validateRequiredFields = (userData,role) => {
+export const validateRequiredFields = (userData) => {
     const {password, username, profile} = userData;
 
     // Check base required fields

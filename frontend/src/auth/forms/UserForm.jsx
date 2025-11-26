@@ -3,6 +3,7 @@ import LinksInsideForm from "./LinksInsideForm";
 import Buttons from "./Buttons";
 import FormField from "./FormField";
 
+
 const UserForm = ({ register, errors, setShowDealerForm, isValid, setUserType }) => {
   const [showMessage, setShowMessage] = useState(false);
 
@@ -68,8 +69,7 @@ const UserForm = ({ register, errors, setShowDealerForm, isValid, setUserType })
 
       <Buttons  showDealerFormHandler={showDealerFormHandler} isValid={isValid} showMessage={showMessage} />
 
-      {/* <LinksInsideForm /> */}
-      <LinksInsideForm link1='/' link2='/auth/signup' textLink1='مینو اصلی' textLink2=' از قبل اکانت دارم' />
+      <LinksInsideForm link1='/' link2='/auth/login' textLink1='مینو اصلی' textLink2=' از قبل اکانت دارم' />
 
     </div>
   );

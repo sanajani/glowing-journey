@@ -83,7 +83,7 @@ const DealerForm = ({ register, errors, onBack }) => {
         />
       </div>
 
-      <LinksInsideForm link1='/' link2='/auth/signup' textLink1='مینو اصلی' textLink2=' از قبل اکانت دارم' />
+      <LinksInsideForm link1='/' link2='/auth/login' textLink1='مینو اصلی' textLink2=' از قبل اکانت دارم' />
     </div>
   );
 };

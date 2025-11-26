@@ -5,7 +5,11 @@ import { validationFieldsBecomeSeller } from "../utilities/validation/validation
 
 // signup
 export const createUserController = catchAsync(async (req,res,next) => {
-    if(!req.body) return res.status(400).json({message:"fields are empty",status: 'failed'})
+    console.log('from frontend');
+    
+    console.log(req.body);
+    
+    // if(!req.body) return res.status(400).json({message:"fields are empty",status: 'failed'})
     const newUser = await createUser(req.body);
 
     res.status(200).json({

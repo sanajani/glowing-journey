@@ -9,26 +9,27 @@ const JWTTOKENCODE = process.env.JWTTOKENCODEENV || 'this is code'
 // signup user
 export const createUser = async (userData) => {
 
-    const {email, username, role} = userData;
-    const phoneNumber1 = userData?.phoneNumber1;
-    const phoneNumber2 = userData?.phoneNumber2;
+//     // const {email, username, role} = userData;
+//     const {email, username} = userData;
+//     const phoneNumber1 = userData?.phoneNumber1;
+//     const phoneNumber2 = userData?.phoneNumber2;
 
-    validateRequiredFields(userData, role);
+//     validateRequiredFields(userData);
 
-    const isUserExsit = await User.findOne({
-        $or:[
-            {email},
-            {username},
-            {phoneNumber1},
-            {phoneNumber2}
-        ]
-    });
-    if (isUserExsit) {
-    if (isUserExsit.email === email) AppError.duplicateField('email', email);
-    else if (isUserExsit.username === username) AppError.duplicateField('username', username);
-    else if (phoneNumber1) AppError.duplicateField('phoneNumber1', phoneNumber1);
-    else if (phoneNumber2) AppError.duplicateField('phoneNumber2', phoneNumber2);
-  }
+//     const isUserExsit = await User.findOne({
+//         $or:[
+//             {email},
+//             {username},
+//             {phoneNumber1},
+//             {phoneNumber2}
+//         ]
+//     });
+//     if (isUserExsit) {
+//     if (isUserExsit.email === email) AppError.duplicateField('email', email);
+//     else if (isUserExsit.username === username) AppError.duplicateField('username', username);
+//     else if (phoneNumber1) AppError.duplicateField('phoneNumber1', phoneNumber1);
+//     else if (phoneNumber2) AppError.duplicateField('phoneNumber2', phoneNumber2);
+//   }
 
     const user = new User(userData);
     const newUser = await user.save();

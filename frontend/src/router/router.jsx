@@ -8,8 +8,8 @@ import Home from '../pages/Home';
 import About from '../pages/About';
 import SingleHome from '../pages/SingleHome';
 import PropertyGallery from '../components/ui/image/PropertyGallery';
-import Signup from '../auth/Signup';
 import Login from '../auth/Login';
+import Singup from '../auth/Signup';
 import AuthLayout from '../layouts/AuthLayout';
 import ShowHouseForm from '../pages/ShowHouseForm';
 import AdminLayout from '../layouts/AdminLayout';
@@ -44,10 +44,12 @@ export const router = createBrowserRouter([
             {
                 path:'login',
                 element: <Login />
+                
             },
             {
                 path:'signup',
-                element:<Signup/>
+                element:<Singup/>
+
             }
         ]
     },
